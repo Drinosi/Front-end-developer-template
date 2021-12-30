@@ -100,7 +100,7 @@ carouselSlide.addEventListener("transitionend", function () {
   }
 });
 
-const emAnime = document.querySelector(".em-animation");
+// const emAnime = document.querySelector(".em-animation");
 
-const emFunction = () => emAnime.classList.toggle("em-shake");
-let timer3 = setInterval(emFunction, 1000);
+// const emFunction = () => emAnime.classList.toggle("em-shake");
+// let timer3 = setInterval(emFunction, 1000);
