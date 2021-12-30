@@ -275,7 +275,7 @@ h1 {
 #nextBtn {
   position: absolute;
   bottom: 20px;
-  color: #0fb;
+  color: #fff;
   font-size: 4em;
   cursor: pointer;
   right: 45%;
@@ -288,7 +288,7 @@ h1 {
 #prevBtn {
   position: absolute;
   bottom: 20px;
-  color: #0fb;
+  color: #fff;
   font-size: 4em;
   cursor: pointer;
   right: 54%;
