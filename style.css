@@ -231,6 +231,7 @@ h1 {
 
 .clients {
   margin-top: 6.25em;
+    text-align: center;
   padding-bottom: 6em;
 }
 
@@ -305,10 +306,6 @@ h1 {
 .btn-toggler-2 {
   transform: translateX(15%);
   transition: 1s;
-}
-
-.clients {
-  text-align: center;
 }
 
 .em-animation {
