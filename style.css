@@ -496,4 +496,12 @@ footer a {
   .clients {
     padding-bottom: 0em;
   }
+  .technologies-logos-2 img{
+    width:130px;
+  }
+  
+  .technologies-logos img {
+    width: 130px;
+
+}
 }
