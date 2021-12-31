@@ -502,6 +502,9 @@ footer a {
   
   .technologies-logos img {
     width: 130px;
-
 }
+  
+  .about{
+  padding:0 9px;
+  }
 }
