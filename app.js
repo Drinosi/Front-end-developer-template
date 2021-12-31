@@ -97,6 +97,7 @@ carouselSlide.addEventListener("transitionend", function () {
 window.addEventListener("scroll", reveal);
 
 function reveal() {
+  console.log('hi')
   const reveals = document.querySelectorAll(".reveal");
   for (let i = 0; i < reveals.length; i++) {
     let windowheight = window.innerHeight;
