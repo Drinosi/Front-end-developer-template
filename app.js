@@ -10,6 +10,12 @@ const timeOut = setTimeout(function () {
   logo.classList.add("logo-show");
 }, 500);
 
+const emAnime = document.querySelector(".em-animation");
+
+const emFunction = () => emAnime.classList.toggle("em-shake");
+let timer3 = setInterval(emFunction, 1000);
+
+
 const buttonFade = document.querySelector(".hire-button");
 
 const animateButton = setTimeout(function () {
@@ -100,7 +106,3 @@ carouselSlide.addEventListener("transitionend", function () {
   }
 });
 
-const emAnime = document.querySelector(".em-animation");
-
-const emFunction = () => emAnime.classList.toggle("em-shake");
-let timer3 = setInterval(emFunction, 1000);
