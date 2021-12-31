@@ -63,7 +63,6 @@ const prevBtn = document.querySelector("#prevBtn");
 let counter = 1;
 const size = carouselQuotes[0].clientWidth;
 
-carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
 
 nextBtn.addEventListener("click", function () {
   if (counter >= carouselQuotes.length - 1) return;
