@@ -48,21 +48,9 @@ techDiv.addEventListener("click", function () {
   logos2.classList.toggle("technologies-logos-2-show");
 });
 
-const scrollAnimate = document.querySelector(".technologies-header");
 
-window.addEventListener("scroll", reveal);
 
-function reveal() {
-  const reveals = document.querySelectorAll(".reveal");
-  for (let i = 0; i < reveals.length; i++) {
-    let windowheight = window.innerHeight;
-    let revealtop = reveals[i].getBoundingClientRect().top;
-    let revealpoint = 1;
-    if (revealtop < windowheight - revealpoint) {
-      reveals[i].classList.add("scroll-reveal");
-    }
-  }
-}
+
 
 ////////////////////////////////////////////////////////////////
 
@@ -105,4 +93,18 @@ carouselSlide.addEventListener("transitionend", function () {
     carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
   }
 });
+
+window.addEventListener("scroll", reveal);
+
+function reveal() {
+  const reveals = document.querySelectorAll(".reveal");
+  for (let i = 0; i < reveals.length; i++) {
+    let windowheight = window.innerHeight;
+    let revealtop = reveals[i].getBoundingClientRect().top;
+    let revealpoint = 1;
+    if (revealtop < windowheight - revealpoint) {
+      reveals[i].classList.add("scroll-reveal");
+    }
+  }
+}
 
