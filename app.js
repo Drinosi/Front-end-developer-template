@@ -10,9 +10,6 @@ const timeOut = setTimeout(function () {
   logo.classList.add("logo-show");
 }, 500);
 
-window.onload=function(){
-carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
-};
 
 const emAnime = document.querySelector(".em-animation");
 
