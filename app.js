@@ -81,7 +81,6 @@ prevBtn.addEventListener("click", function () {
 
 carouselSlide.addEventListener("transitionend", function () {
   if (carouselQuotes[counter].id === "lastClone") {
-    console.log("hi");
     carouselSlide.style.transition = "none";
     counter = carouselQuotes.length - 2;
     carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
