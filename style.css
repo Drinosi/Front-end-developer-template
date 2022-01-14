@@ -1,9 +1,13 @@
 * {
   box-sizing: border-box;
   padding: 0;
-
   margin: 0;
   scroll-behavior: smooth;
+}
+
+*::selection {
+  color: #0fb;
+  background: black;
 }
 
 em {
@@ -231,7 +235,7 @@ h1 {
 
 .clients {
   margin-top: 6.25em;
-    text-align: center;
+  text-align: center;
   padding-bottom: 6em;
 }
 
@@ -393,10 +397,90 @@ footer a {
   margin: 0 3em;
 }
 
+.works {
+  margin-top: 5em;
+}
+
+.examples {
+  padding-top: 4em;
+}
+
+.examples img {
+  border: 0.5px solid white;
+  width: auto;
+  height: 400px;
+}
+
+.img-holder {
+  display: flex;
+  justify-content: start;
+}
+
+.img-holder-2 {
+  display: flex;
+  justify-content: end;
+  padding: 5em 0;
+}
+
+.site,
+.site-3 {
+  padding-left: 4em;
+}
+
+.site-2 {
+  padding-right: 4em;
+}
+
+.img-holder-3 {
+  display: flex;
+  justify-content: start;
+}
+
+.examples img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.halfed {
+  color: white;
+  margin-top: 15px;
+  width: 36%;
+}
+
 @media screen and (max-width: 480px) {
   .main-container {
-    max-width: auto;
     padding: 0 15px;
+  }
+
+  .works p {
+    padding: 0 0.5em;
+  }
+
+  .works h1 {
+    font-size: 1.5em;
+  }
+
+  .works hr {
+    width: 90%;
+  }
+
+  .img-holder-2 > a:nth-child(2) > img:nth-child(1) {
+    transform: translateY(-60%);
+  }
+
+  .site-2 {
+    transform: translateY(200%);
+  }
+
+  .img-holder,
+  .img-holder-2,
+  .img-holder-3 {
+    display: grid;
+  }
+
+  .examples img {
+    width: 370px;
+    height: 250px;
   }
 
   .about-h1 {
@@ -433,15 +517,26 @@ footer a {
 
   .technologies-logos,
   .technologies-logos-2 {
-    display: grid;
+    justify-content: space-around;
+    padding: 0 15px;
+  }
+
+  .technologies-logos img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .technologies-logos-2 img {
+    width: 120px;
+    height: 120px;
   }
 
   .secondIcon {
-    margin: 1.5em 0;
+    margin: 0;
   }
 
   .margin-img {
-    margin: 1.5em 0;
+    margin: 0;
   }
 
   .carousel-slider h1 {
@@ -496,15 +591,15 @@ footer a {
   .clients {
     padding-bottom: 0em;
   }
-  .technologies-logos-2 img{
-    width:130px;
+  .technologies-logos-2 img {
+    width: 130px;
   }
-  
+
   .technologies-logos img {
     width: 130px;
-}
-  
-  .about{
-  padding:0 9px;
+  }
+
+  .about {
+    padding: 0 9px;
   }
 }
