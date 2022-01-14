@@ -171,7 +171,7 @@ h1 {
 .technologies-logos-2 img {
   width: 200px;
   height: auto;
-  filter: blur(30px);
+  transform:translateX(50%)
   transition: 2s;
 }
 
@@ -180,7 +180,7 @@ h1 {
 }
 
 .technologies-logos-2-show img {
-  filter: blur(0px);
+  transform:translateX(0%)
 }
 
 .firstIcon {
