@@ -5,10 +5,6 @@
   scroll-behavior: smooth;
 }
 
-body{
-overflow-x:hidden;
-}
-
 *::selection {
   color: #0fb;
   background: black;
@@ -175,9 +171,9 @@ h1 {
 .technologies-logos-2 img {
   width: 200px;
   height: auto;
-  transform:translateX(50%);
+  transform: translateX(50%);
   transition: 1.2s;
-  opacity:0;
+  opacity: 0;
 }
 
 .margin-img {
@@ -185,8 +181,8 @@ h1 {
 }
 
 .technologies-logos-2-show img {
-  transform:translateX(0%);
-    opacity:1;
+  transform: translateX(0%);
+  opacity: 1;
 }
 
 .firstIcon {
@@ -204,7 +200,7 @@ h1 {
 
 .thirdIcon {
   opacity: 0;
-  transition: 1.2s all cubic-bezier(.42,0,0,1.3);
+  transition: 1.2s;
   transform: translateY(-50%);
 }
 
@@ -223,11 +219,30 @@ h1 {
   transform: translateY(0%);
 }
 
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
 
 .clients {
   margin-top: 6.25em;
   text-align: center;
   padding-bottom: 6em;
+}
+
+.technologies-logos-2 img:hover {
+  animation: bounce 0.8s;
 }
 
 .clients-header {
@@ -409,13 +424,16 @@ footer a {
   padding: 5em 0;
 }
 
-.site,
-.site-3 {
+.example-text {
   padding-left: 4em;
 }
 
-.site-2 {
+.example-text-1 {
   padding-right: 4em;
+}
+
+.examples h2 {
+  margin-bottom: 0.8em;
 }
 
 .img-holder-3 {
@@ -439,10 +457,10 @@ footer a {
     padding: 0 15px;
   }
 
-  .works p {
-    padding: 0 0.5em;
+  .example-text,
+  .example-text-1 {
+    padding: 0;
   }
-
   .works h1 {
     font-size: 1.5em;
   }
@@ -455,8 +473,8 @@ footer a {
     transform: translateY(-60%);
   }
 
-  .site-2 {
-    transform: translateY(200%);
+  .example-text-1 {
+    transform: translateY(180%);
   }
 
   .img-holder,
@@ -479,7 +497,7 @@ footer a {
   }
 
   .clients {
-    margin-top: 1em;
+    margin-top: 4em;
   }
 
   .technologies {
@@ -565,6 +583,13 @@ footer a {
     padding: 0;
   }
 
+  .works {
+    margin-left: 8px;
+  }
+
+  .examples img {
+    width: 360px;
+  }
   .carousel-slider h1 {
     font-size: 0.8em;
     min-width: 375px;
