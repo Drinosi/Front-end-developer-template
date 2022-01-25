@@ -107,3 +107,13 @@ function reveal() {
   }
 }
 
+
+const intoView = document.querySelector(".into-view");
+const footer = document.querySelector("#footer");
+
+intoView.addEventListener("click", (e) => {
+  e.preventDefault();
+  footer.scrollIntoView({ behavior: "smooth" });
+});
+
+
