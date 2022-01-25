@@ -171,7 +171,7 @@ h1 {
 .technologies-logos-2 img {
   width: 200px;
   height: auto;
-  transform: translateX(50%);
+  transform: translateY(50%);
   transition: 1.2s;
   opacity: 0;
 }
@@ -181,7 +181,7 @@ h1 {
 }
 
 .technologies-logos-2-show img {
-  transform: translateX(0%);
+  transform: translateY(0%);
   opacity: 1;
 }
 
