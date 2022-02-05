@@ -100,7 +100,7 @@ function reveal() {
   for (let i = 0; i < reveals.length; i++) {
     let windowheight = window.innerHeight;
     let revealtop = reveals[i].getBoundingClientRect().top;
-    let revealpoint = 1;
+    let revealpoint = 200;
     if (revealtop < windowheight - revealpoint) {
       reveals[i].classList.add("scroll-reveal");
     }
