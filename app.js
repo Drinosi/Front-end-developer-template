@@ -10,12 +10,10 @@ const timeOut = setTimeout(function () {
   logo.classList.add("logo-show");
 }, 500);
 
-
 const emAnime = document.querySelector(".em-animation");
 
 const emFunction = () => emAnime.classList.toggle("em-shake");
 let timer3 = setInterval(emFunction, 1000);
-
 
 const buttonFade = document.querySelector(".hire-button");
 
@@ -49,10 +47,6 @@ techDiv.addEventListener("click", function () {
   logos2.classList.toggle("technologies-logos-2-show");
 });
 
-
-
-
-
 ////////////////////////////////////////////////////////////////
 
 const carouselSlide = document.querySelector(".carousel-slider");
@@ -63,7 +57,6 @@ const prevBtn = document.querySelector("#prevBtn");
 
 let counter = 1;
 const size = carouselQuotes[0].clientWidth;
-
 
 nextBtn.addEventListener("click", function () {
   if (counter >= carouselQuotes.length - 1) return;
@@ -100,13 +93,36 @@ function reveal() {
   for (let i = 0; i < reveals.length; i++) {
     let windowheight = window.innerHeight;
     let revealtop = reveals[i].getBoundingClientRect().top;
-    let revealpoint = 200;
+    let revealpoint = 100;
     if (revealtop < windowheight - revealpoint) {
       reveals[i].classList.add("scroll-reveal");
+    }
+    if (reveals[6].classList.contains("scroll-reveal")) {
+      window.removeEventListener("scroll", reveal);
     }
   }
 }
 
+// const reveals = document.querySelectorAll(".reveal");
+
+// const sectionScroll = function (entries, observer) {
+//   const [entry] = entries;
+//   console.log(entry);
+//   if (!entry.isIntersecting) {
+//     return;
+//   } else {
+//     entry.target.classList.add("scroll-reveal");
+//   }
+// };
+
+// const observer = new IntersectionObserver(sectionScroll, {
+//   root: null,
+//   threshold: 0.2,
+// });
+
+// reveals.forEach(function (section) {
+//   observer.observe(section);
+// });
 
 const intoView = document.querySelector(".into-view");
 const footer = document.querySelector("#footer");
@@ -115,5 +131,3 @@ intoView.addEventListener("click", (e) => {
   e.preventDefault();
   footer.scrollIntoView({ behavior: "smooth" });
 });
-
-
