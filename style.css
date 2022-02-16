@@ -413,6 +413,7 @@ footer a {
 
 .examples {
   padding-top: 4em;
+  overflow:hidden;
 }
 
 .examples img {
@@ -480,12 +481,9 @@ footer a {
     width: 90%;
   }
 
-  .img-holder-2 > a:nth-child(2) > img:nth-child(1) {
-    transform: translateY(-60%);
-  }
 
   .example-text-1 {
-    transform: translateY(180%);
+    order:1;
   }
 
   .img-holder,
@@ -606,6 +604,7 @@ footer a {
 
   .examples img {
     width: 360px;
+    height:100%;
   }
   .carousel-slider h1 {
     font-size: 0.8em;
