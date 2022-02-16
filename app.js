@@ -49,80 +49,54 @@ techDiv.addEventListener("click", function () {
 
 ////////////////////////////////////////////////////////////////
 
-const carouselSlide = document.querySelector(".carousel-slider");
-const carouselQuotes = document.querySelectorAll(".carousel-slider h1");
+const carouselSlide = document.querySelector(".carousel-container");
+const carouselQuotes = document.querySelectorAll(".slide");
 
 const nextBtn = document.querySelector("#nextBtn");
 const prevBtn = document.querySelector("#prevBtn");
 
-let counter = 1;
-const size = carouselQuotes[0].clientWidth;
+let counter = 0;
+const size = carouselQuotes.length;
 
-nextBtn.addEventListener("click", function () {
-  if (counter >= carouselQuotes.length - 1) return;
-  carouselSlide.style.transition = "transform 1s ease-in-out";
-  counter++;
-  carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+const goToSlide = function (slide) {
+  carouselQuotes.forEach((curr, i) => {
+    curr.style.transform = `translateX(${100 * (i - slide)}%)`;
+  });
+};
+
+goToSlide(counter);
+
+const nextSlide = function (slide) {
+  if (counter === size - 1) {
+    counter = 0;
+  } else {
+    counter++;
+  }
+  goToSlide(counter);
+};
+
+const prevSlide = function () {
+  if (counter === 0) {
+    counter = size - 1;
+  } else {
+    counter--;
+  }
+  goToSlide(counter);
+};
+
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowRight") nextSlide();
 });
 
-prevBtn.addEventListener("click", function () {
-  if (counter <= 0) return;
-  carouselSlide.style.transition = "transform 1s ease-in-out";
-  counter--;
-  carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowLeft") prevSlide();
 });
 
-carouselSlide.addEventListener("transitionend", function () {
-  if (carouselQuotes[counter].id === "lastClone") {
-    carouselSlide.style.transition = "none";
-    counter = carouselQuotes.length - 2;
-    carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
-  }
 
-  if (carouselQuotes[counter].id === "firstClone") {
-    carouselSlide.style.transition = "none";
-    counter = carouselQuotes.length - counter;
-    carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
-  }
-});
 
-window.addEventListener("scroll", reveal);
-
-function reveal() {
-  const reveals = document.querySelectorAll(".reveal");
-  for (let i = 0; i < reveals.length; i++) {
-    let windowheight = window.innerHeight;
-    let revealtop = reveals[i].getBoundingClientRect().top;
-    let revealpoint = 100;
-    if (revealtop < windowheight - revealpoint) {
-      reveals[i].classList.add("scroll-reveal");
-    }
-    if (reveals[6].classList.contains("scroll-reveal")) {
-      window.removeEventListener("scroll", reveal);
-    }
-  }
-}
-
-// const reveals = document.querySelectorAll(".reveal");
-
-// const sectionScroll = function (entries, observer) {
-//   const [entry] = entries;
-//   console.log(entry);
-//   if (!entry.isIntersecting) {
-//     return;
-//   } else {
-//     entry.target.classList.add("scroll-reveal");
-//   }
-// };
-
-// const observer = new IntersectionObserver(sectionScroll, {
-//   root: null,
-//   threshold: 0.2,
-// });
-
-// reveals.forEach(function (section) {
-//   observer.observe(section);
-// });
 
 const intoView = document.querySelector(".into-view");
 const footer = document.querySelector("#footer");
@@ -130,4 +104,23 @@ const footer = document.querySelector("#footer");
 intoView.addEventListener("click", (e) => {
   e.preventDefault();
   footer.scrollIntoView({ behavior: "smooth" });
+});
+
+const reveals = document.querySelectorAll(".reveal");
+
+const fadeIn = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  console.log("drinos");
+  entry.target.classList.add("scroll-reveal");
+  observer.unobserve(entry.target);
+};
+
+const observer = new IntersectionObserver(fadeIn, {
+  root: null,
+  threshold: 0.5,
+});
+
+reveals.forEach((curr) => {
+  observer.observe(curr);
 });
