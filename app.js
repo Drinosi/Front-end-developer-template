@@ -111,7 +111,6 @@ const reveals = document.querySelectorAll(".reveal");
 const fadeIn = function (entries, observer) {
   const [entry] = entries;
   if (!entry.isIntersecting) return;
-  console.log("drinos");
   entry.target.classList.add("scroll-reveal");
   observer.unobserve(entry.target);
 };
