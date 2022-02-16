@@ -267,10 +267,14 @@ h1 {
   height: 200px;
   width: 100%;
   text-align: center;
+  position:relative;
 }
 
-.carousel-slider h1 {
-  min-width: 910px;
+.slide {
+ width:100%;
+  position:absolute;
+  top:0;
+  transition:.8s ease;
   font-size: 20px;
   font-style: italic;
 }
