@@ -468,6 +468,10 @@ footer a {
   .main-container {
     padding: 0 15px;
   }
+  
+  .about{
+  margin-top:1em;
+  }
 
   .example-text,
   .example-text-1 {
